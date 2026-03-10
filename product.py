@@ -7,7 +7,7 @@ class Product:
         self.condition = condition
         self.description = description
 
-    def __str__(self):
+    def to_dict(self):
         return {
             "id": self.pid,
             "name": self.name,
@@ -16,3 +16,6 @@ class Product:
             "condition": self.condition,
             "description": self.description
         }
+
+    def __str__(self):
+        return f"ID: {self.pid}, Name: {self.name}, Category: {self.category}, Price: ${self.price:.2f}, Condition: {self.condition}, Description: {self.description}"
