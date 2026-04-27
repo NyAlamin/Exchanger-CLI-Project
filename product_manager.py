@@ -1,5 +1,7 @@
 from product import Product
 from storage import Storage 
+import pandas as pd   
+
 
 class ProductManager:
     def __init__(self):
@@ -13,7 +15,19 @@ class ProductManager:
         self.storage.save(self.products)
         return product_dict
     
-    def find_exchange_matches(self, product_id):
+    def view_all_products(self):
+        return self.products
+    def search_products(self, keyword):
+        keyword = keyword.lower()
+        results = []
+        for p in self.products:
+            if (keyword in p['name'].lower()):
+                results.append(p)
+        return results
+    
+
+
+def find_exchange_matches(self, product_id):
         pass
 
 
